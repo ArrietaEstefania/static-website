@@ -1,29 +1,37 @@
-🌐 Sitio Web Institucional
-Este repositorio contiene el sitio web institucional utilizado como contenido estático en un entorno Kubernetes con Minikube.
-Fue creado a partir de un fork del repositorio original: ewojjowe/static-website.
+# 🌐 Sitio Web Institucional
 
-✏️ Modificaciones realizadas al sitio web
+Este repositorio contiene el **sitio web institucional** utilizado como contenido estático en un entorno **Kubernetes con Minikube**.
+
+Fue creado a partir de un **fork** del repositorio original: [ewojjowe/static-website](https://github.com/ewojjowe/static-website).
+
+---
+
+## ✏️ Modificaciones realizadas al sitio web
+
 El sitio fue adaptado y personalizado con los siguientes cambios:
 
-1. ✅ Personalización del contenido
-Se abrió el proyecto en VS Code:
+### 1. ✅ Personalización del contenido
 
-mathematica
+Se abrió el proyecto en **VS Code**:
 
+```mathematica
 File → Open Folder → devops-web
-Y se editaron los archivos HTML y CSS correspondientes.
+```
 
-2. 📬 Formulario de contacto responsive
+Y se editaron los archivos **HTML** y **CSS** correspondientes.
+
+---
+
+### 2. 📬 Formulario de contacto responsive
+
 El formulario de contacto fue adaptado para funcionar correctamente en distintas resoluciones:
 
-Pantallas grandes: se muestra a la derecha junto con un div informativo a la izquierda.
+- **Pantallas grandes:** se muestra a la derecha junto con un div informativo a la izquierda.
+- **Pantallas pequeñas:** se centra el formulario y se oculta el div izquierdo.
 
-Pantallas pequeñas: se centra el formulario y se oculta el div izquierdo.
+**Media Query utilizada:**
 
-Media Query utilizada:
-
-css
-
+```css
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -40,21 +48,26 @@ css
     max-width: 500px;
   }
 }
-3. 🍔 Menú desplegable tipo hamburguesa
-Se incorporó un menú hamburguesa para mejorar la navegación móvil.
+```
 
-HTML agregado:
+---
 
-html
+### 3. 🍔 Menú desplegable tipo hamburguesa
 
+Se incorporó un **menú hamburguesa** para mejorar la navegación móvil.
+
+**HTML agregado:**
+
+```html
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 <label for="menu-toggle" class="menu-button">
   <span class="menu-icon"></span>
 </label>
-Media queries para distintas resoluciones:
+```
 
-css
+**Media queries para distintas resoluciones:**
 
+```css
 @media only screen and (max-width: 768px) {
   .menu-button {
     display: block;
@@ -102,32 +115,53 @@ css
     top: 0;
   }
 }
-🧰 Requisitos para manipular este repositorio
-Tener Git instalado
+```
 
-Conexión con tu cuenta de GitHub
+---
 
-📝 Comandos útiles
-📥 Clonar el repositorio
-bash
+## 🧰 Requisitos para manipular este repositorio
 
+- Tener **Git** instalado.
+- Conexión con tu cuenta de **GitHub**.
+
+---
+
+## 📝 Comandos útiles
+
+### 📥 Clonar el repositorio
+
+```bash
 git clone https://github.com/TU_USUARIO/static-website.git
 cd static-website
-Reemplazá TU_USUARIO por tu nombre de usuario real en GitHub.
+```
 
-🖊️ Editar y modificar contenido
-Realizá las modificaciones necesarias (HTML, CSS, imágenes, etc.) dentro del repositorio clonado.
+> **Nota:** Reemplazá `TU_USUARIO` por tu nombre de usuario real en **GitHub**.
 
-💾 Guardar y subir cambios a GitHub
-bash
+---
 
+### 🖊️ Editar y modificar contenido
+
+Realizá las modificaciones necesarias (**HTML**, **CSS**, imágenes, etc.) dentro del repositorio clonado.
+
+---
+
+### 💾 Guardar y subir cambios a GitHub
+
+```bash
 git status                         # Verificar qué archivos fueron modificados
 git add .                          # Agregar todos los cambios
 git commit -m "Personalizo contenido web institucional"
 git push origin master             # Subir los cambios al branch principal
-📌 Nota: en algunos repositorios el branch principal puede ser main en lugar de master.
+```
 
-🔄 Descargar cambios del repositorio remoto
-bash
+> **Nota:** en algunos repositorios el branch principal puede ser `main` en lugar de `master`.
 
+---
+
+### 🔄 Descargar cambios del repositorio remoto
+
+```bash
 git pull origin master
+```
+
+---
