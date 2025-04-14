@@ -1,30 +1,28 @@
-### 🌐 Sitio Web Institucional 
-
+🌐 Sitio Web Institucional
 Este repositorio contiene el sitio web institucional utilizado como contenido estático en un entorno Kubernetes con Minikube.
-Fue creado a partir de un fork del repositorio original: ewojjowe/static-website
+Fue creado a partir de un fork del repositorio original: ewojjowe/static-website.
 
 ✏️ Modificaciones realizadas al sitio web
-
 El sitio fue adaptado y personalizado con los siguientes cambios:
 
-### 1. ✅ Personalización del contenido
+1. ✅ Personalización del contenido
+Se abrió el proyecto en VS Code:
 
-Se abrió el proyecto en VS Code con:
+mathematica
 
 File → Open Folder → devops-web
+Y se editaron los archivos HTML y CSS correspondientes.
 
-y se editaron los archivos HTML y CSS correspondientes.
-
-
-### 2. 📬 Formulario de contacto responsive
-
+2. 📬 Formulario de contacto responsive
 El formulario de contacto fue adaptado para funcionar correctamente en distintas resoluciones:
 
-- **En pantallas grandes**: se muestra a la derecha junto con un div informativo a la izquierda.
-- **En pantallas pequeñas**: se centra el formulario y se oculta el div izquierdo.
+Pantallas grandes: se muestra a la derecha junto con un div informativo a la izquierda.
 
-**Media Query utilizada:**
+Pantallas pequeñas: se centra el formulario y se oculta el div izquierdo.
 
+Media Query utilizada:
+
+css
 
 @media (max-width: 768px) {
   .grid-container {
@@ -42,52 +40,94 @@ El formulario de contacto fue adaptado para funcionar correctamente en distintas
     max-width: 500px;
   }
 }
-
-### 3. 🍔 Menú desplegable tipo hamburguesa
+3. 🍔 Menú desplegable tipo hamburguesa
 Se incorporó un menú hamburguesa para mejorar la navegación móvil.
 
 HTML agregado:
 
+html
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 <label for="menu-toggle" class="menu-button">
   <span class="menu-icon"></span>
 </label>
+Media queries para distintas resoluciones:
 
+css
 
-Se oculta el menú por defecto y se muestra cuando se marca el checkbox.
+@media only screen and (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
 
-Media queries para diferentes resoluciones:
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 998;
+  }
 
-Se adaptaron estilos para pantallas pequeñas (≤768px) y muy pequeñas (≤480px), permitiendo una experiencia más fluida.
+  .main-nav li {
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+  }
 
+  .main-nav li a {
+    padding: 10px;
+    font-size: 18px;
+    display: block;
+  }
 
-### 🧰 Requisitos para manipular este repositorio desde tu directorio local
+  .menu-toggle:checked ~ .main-nav {
+    right: 0;
+  }
 
-- Git instalado
-- Conexión con tu cuenta de GitHub
+  .menu-toggle:checked ~ .menu-button .menu-icon {
+    background-color: transparent;
+  }
 
-### 📝 Comandos útiles
+  .menu-toggle:checked ~ .menu-button .menu-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
 
-### 📥 Clonar el repositorio
+  .menu-toggle:checked ~ .menu-button .menu-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}
+🧰 Requisitos para manipular este repositorio
+Tener Git instalado
+
+Conexión con tu cuenta de GitHub
+
+📝 Comandos útiles
+📥 Clonar el repositorio
+bash
 
 git clone https://github.com/TU_USUARIO/static-website.git
 cd static-website
 Reemplazá TU_USUARIO por tu nombre de usuario real en GitHub.
 
-### 🖊️ Editar y modificar contenido
+🖊️ Editar y modificar contenido
+Realizá las modificaciones necesarias (HTML, CSS, imágenes, etc.) dentro del repositorio clonado.
 
-Realizá las modificaciones que necesites (HTML, CSS, imágenes, etc.) dentro del repositorio clonado.
-
-### 💾 Guardar y subir cambios a GitHub
+💾 Guardar y subir cambios a GitHub
+bash
 
 git status                         # Verificar qué archivos fueron modificados
 git add .                          # Agregar todos los cambios
 git commit -m "Personalizo contenido web institucional"
-git push origin main               # Subir los cambios al branch principal
+git push origin master             # Subir los cambios al branch principal
+📌 Nota: en algunos repositorios el branch principal puede ser main en lugar de master.
 
-📌 Nota: en algunos repositorios el branch principal puede ser master en lugar de main.
+🔄 Descargar cambios del repositorio remoto
+bash
 
-### 🔄 Descargar cambios del repositorio remoto
-
-git pull origin main
+git pull origin master
